@@ -226,7 +226,7 @@ export class EmmyDebugSession extends DebugSession implements IEmmyStackContext 
         }
         const args = [
             'fd',
-            parse(file).base,
+            parse(file).base + '.lua',
             startPath
         ];
         if (!this._fileCache.has(file)) {
