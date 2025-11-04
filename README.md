@@ -2,8 +2,25 @@
 
 This is a fork version of [EmmyLua](https://github.com/EmmyLua/VSCode-EmmyLua) for working with [nvim-dap](https://github.com/mfussenegger/nvim-dap) client.
 
+# Requirement
+
+-   nodejs
+-   fd
+
+# Install
+
+lazy
+
+```
+"xubury/emmylua.nvim",
+build = "npm install && npm run compile && node ./build/prepare-version.js && node ./build/prepare.js",
+
+```
+
 # Usage
+
 Example adaptor configuration:
+
 ```lua
 
 local emmylua = require("emmylua")
@@ -24,5 +41,6 @@ dap.configurations.lua = {
 ```
 
 # Build
-* run `npm install` and `npm run compile`
-* run `node build/prepare-version.js` and `node build/prepare.js`
+
+-   run `npm install` and `npm run compile`
+-   run `node build/prepare-version.js` and `node build/prepare.js`

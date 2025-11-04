@@ -48,12 +48,6 @@
                 }
             ]
         },
-        "snippets": [
-            {
-                "language": "lua",
-                "path": "./snippets/snippets.json"
-            }
-        ],
         "languages": [
             {
                 "id": "lua",
