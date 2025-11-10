@@ -224,11 +224,13 @@ export class EmmyDebugSession extends DebugSession implements IEmmyStackContext 
             this.sendEvent(new OutputEvent(`fromDir:ERROR:startPath:${startPath},filter:${file}.\n`));
             return "";
         }
+        let path = parse(file).base
         const args = [
             'fd',
-            parse(file).base + '.lua',
+            path.endsWith('.lua') ? path : path + '.lua',
             startPath
         ];
+
         if (!this._fileCache.has(file)) {
             await new Promise<void>((r, c) => { cp.exec(args.join(" "), { windowsHide : true  }, (err, stdout, stderr) => {
                 let res : string[] = []
